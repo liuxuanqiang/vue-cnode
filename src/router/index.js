@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/pages/index'
 import Topics from '@/pages/topics'
 import Topic from '@/pages/topic'
+import User from '@/pages/user'
 
 Vue.use(Router)
 
@@ -19,5 +20,9 @@ export default new Router({
     path: '/topic/:id',
     name: 'topic',
     component: Topic
+  }, {
+    path: '/user/:id',
+    name: 'user',
+    component: User
   }]
 })
