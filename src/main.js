@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './vuex'
 import axios from 'axios'
 import utils from './utils/index.js'
 
@@ -15,6 +16,7 @@ Vue.prototype.$utils = utils
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -5,20 +5,45 @@
                 <a class="brand" href="/">
                   <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg">
                 </a>
-                <ul class="nav pull-right">
+                <ul class="nav pull-right" v-if="!userInfo.loginname">
                     <li><a href="/">首页</a></li>
-                    <li><a href="/getstart">新手入门</a></li>
-                    <li><a href="/api">API</a></li>                   
-                    <li><a href="/about" target="">关于</a></li>    
-                    <li><a href="/signup">注册</a></li>
-                    <li><a href="/signin">登录</a></li>
+                    <li><a href="https://cnodejs.org/getstart" target="_blank">新手入门</a></li>
+                    <li><a href="https://cnodejs.org/api" target="_blank">API</a></li>                   
+                    <li><a href="/#/about/">关于</a></li>    
+                    <li><a href="/#/login/">登录</a></li>
+                </ul>
+                <ul class="nav pull-right" v-if="userInfo.loginname">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="https://cnodejs.org/getstart" target="_blank">新手入门</a></li>
+                    <li><a href="https://cnodejs.org/api" target="_blank">API</a></li>                   
+                    <li><a href="/#/about/">关于</a></li>
+                    <li><a href="/#/login/">退出</a></li>   
+                    <li><a href="javascript:;" class="avatar"><img :src="userInfo.avatar_url" @click="goUser"></a></li>
                 </ul>
             </div>
         </div>
     </div>
 </template>
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  replace: true,
+  computed: {
+    ...mapGetters({
+      userInfo: "getUserInfo"
+    })
+  },
+  methods: {
+    goUser() {
+      this.$router.push({
+        name: "user",
+        params: {
+          id: this.userInfo.loginname
+        }
+      });
+    }
+  }
+};
 </script>
 
 <style lang="less">
@@ -51,6 +76,17 @@ export default {};
           &:hover {
             background: #444;
             color: #fff;
+          }
+        }
+        .avatar {
+          width: 30px;
+          height: 30px;
+          margin-top: 5px;
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
           }
         }
       }
