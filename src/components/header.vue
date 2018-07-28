@@ -2,22 +2,22 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="/">
+                <router-link :to="{name:'index'}" class="brand">
                   <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg">
-                </a>
+                </router-link>
                 <ul class="nav pull-right" v-if="!userInfo.loginname">
-                    <li><a href="/">首页</a></li>
+                    <li><router-link :to="{name:'index'}">首页</router-link></li>
                     <li><a href="https://cnodejs.org/getstart" target="_blank">新手入门</a></li>
                     <li><a href="https://cnodejs.org/api" target="_blank">API</a></li>                   
-                    <li><a href="/#/about/">关于</a></li>    
-                    <li><a href="/#/login/">登录</a></li>
+                    <li><router-link :to="{name:'about'}">关于</router-link></li>    
+                    <li><router-link :to="{name:'login'}">登录</router-link></li>
                 </ul>
                 <ul class="nav pull-right" v-if="userInfo.loginname">
-                    <li><a href="/">首页</a></li>
+                    <li><router-link :to="{name:'index'}">首页</router-link></li>
                     <li><a href="https://cnodejs.org/getstart" target="_blank">新手入门</a></li>
                     <li><a href="https://cnodejs.org/api" target="_blank">API</a></li>                   
-                    <li><a href="/#/about/">关于</a></li>
-                    <li><a href="/#/login/">退出</a></li>   
+                    <li><router-link :to="{name:'about'}">关于</router-link></li>    
+                    <li><router-link :to="{name:'login'}">退出</router-link></li>  
                     <li><a href="javascript:;" class="avatar"><img :src="userInfo.avatar_url" @click="goUser"></a></li>
                 </ul>
             </div>
