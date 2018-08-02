@@ -8,18 +8,19 @@
 
 ```npm install```
 
-2.启动服务
+2.运行项目
 
 ```npm run dev```，浏览器访问： http://localhost:8080
 
 
-3.发布代码
+3.打包代码
 
 ```npm run build```，根目录下生成dist文件夹
 
 ### 目录结构
+项目结构由vue-cli生成，详细说明如下：
 <pre>
-.       
+...       
 ├── build              // webpack相关配置文件
 ├── config             // vue配置文件
 ├── src                // 项目源码目录
