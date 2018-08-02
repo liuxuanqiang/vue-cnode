@@ -1,6 +1,6 @@
 <template>
   <footer class="copyright">
-    Copyright &copy; liuxuanqiang
+    Copyright &copy; <a href="https://liuxuanqiang.github.io/">liuxuanqiang</a>
   </footer>
 </template>
 <style lang="less">
