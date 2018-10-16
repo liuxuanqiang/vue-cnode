@@ -3,7 +3,7 @@
         <div class="navbar-inner">
             <div class="container">
                 <router-link :to="{name:'index'}" class="brand">
-                  <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg">
+                  <img src="https://static2.cnodejs.org/public/images/cnodejs_light.svg">
                 </router-link>
                 <ul class="nav pull-right" v-if="!userInfo.loginname">
                     <li><router-link :to="{name:'index'}">首页</router-link></li>
